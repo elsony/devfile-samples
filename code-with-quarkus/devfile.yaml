@@ -3,8 +3,13 @@ metadata:
   name: java-quarkus
   version: 1.1.0
   attributes:
-    alpha.build-context: src/main/docker
-    alpha.build-dockerfile: Dockerfile.jvm
+    # Before building the container image run:
+    # ./mvnw package
+    #
+    # Then, build the image with:
+    # docker build -f src/main/docker/Dockerfile.jvm -t quarkus/kafka-jvm .
+    alpha.build-context: .
+    alpha.build-dockerfile: src/main/docker/Dockerfile.jvm
   website: https://quarkus.io
   displayName: Quarkus Java
   description: Upstream Quarkus with Java+GraalVM
